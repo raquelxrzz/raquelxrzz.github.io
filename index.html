@@ -54,12 +54,6 @@
       color: #16c79a;
     }
 
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
     .card {
       background: #22243a;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -67,6 +61,7 @@
       padding: 22px 20px;
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      margin-bottom: 30px;
     }
 
     .card:hover {
@@ -97,6 +92,14 @@
       text-decoration: underline;
     }
 
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+      border-radius: 16px;
+      background: white;
+    }
+
     footer {
       padding: 0 0 36px;
       color: #98a3b8;
@@ -115,6 +118,10 @@
       .card {
         padding: 18px;
       }
+
+      iframe {
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -131,15 +138,15 @@
 
   <main>
     <div class="container">
-      <h2 class="section-title">Visualizations</h2>
+      <h2 class="section-title">Featured visualization</h2>
 
-      <div class="card-grid">
-        <article class="card">
-          <h2>Motor Vehicle Theft on Sundays</h2>
-          <p>An interactive district-level choropleth showing where this crime is most concentrated on Sundays.</p>
-          <a href="./plots/motor_vehicle_theft_sundays.html" target="_blank">Open visualization</a>
-        </article>
-      </div>
+      <article class="card">
+        <h2>Motor Vehicle Theft on Sundays</h2>
+        <p>An interactive district-level choropleth showing where this crime is most concentrated on Sundays.</p>
+        <a href="./plots/motor_vehicle_theft_sundays.html" target="_blank">Open in full page</a>
+      </article>
+
+      <iframe src="./plots/motor_vehicle_theft_sundays.html"></iframe>
     </div>
   </main>
 
