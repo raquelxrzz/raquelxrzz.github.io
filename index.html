@@ -1,26 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Raquel's Data Viz Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SF Crime: Two Decades of Data</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #1a1a2e;
+      color: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      width: 100%;
+      padding: 72px 0 48px;
+      background: linear-gradient(180deg, rgba(22, 199, 154, 0.08), rgba(26, 26, 46, 0));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+
+    .intro {
+      max-width: 760px;
+      font-size: 1.05rem;
+      color: #d7deea;
+      margin: 0;
+    }
+
+    main {
+      padding: 40px 0 72px;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin: 0 0 20px;
+      color: #16c79a;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #22243a;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(22, 199, 154, 0.45);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: #c7cfdb;
+      font-size: 0.97rem;
+    }
+
+    .card a {
+      color: #16c79a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 0 0 36px;
+      color: #98a3b8;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 56px 0 36px;
+      }
+
+      main {
+        padding: 28px 0 56px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 1000px; margin: auto; padding: 20px; line-height: 1.6;">
+<body>
+  <header>
+    <div class="container">
+      <h1>SF Crime: Two Decades of Data</h1>
+      <p class="intro">
+        This portfolio explores long-term patterns in San Francisco crime data through interactive visualizations and maps.
+        It combines temporal and spatial analysis to highlight how crime varies across districts and over time.
+      </p>
+    </div>
+  </header>
 
-    <h1>San Francisco Crime Visualizations</h1>
+  <main>
+    <div class="container">
+      <h2 class="section-title">Visualizations</h2>
 
-    <p>
-        This is a test page for my GitHub Pages website. Below is an interactive Plotly map
-        showing motor vehicle theft incidents on Sundays across San Francisco police districts.
-    </p>
+      <div class="card-grid">
+        <article class="card">
+          <h2>Motor Vehicle Theft on Sundays</h2>
+          <p>An interactive district-level choropleth showing where this crime is most concentrated on Sundays.</p>
+          <a href="./plots/motor_vehicle_theft_sundays.html" target="_blank">Open visualization</a>
+        </article>
+      </div>
+    </div>
+  </main>
 
-    <h2>Motor Vehicle Theft on Sundays</h2>
-
-    <iframe
-        src="./plots/motor_vehicle_theft_sundays.html"
-        width="100%"
-        height="700"
-        style="border:none;">
-    </iframe>
-
+  <footer>
+    <div class="container">
+      Built as a data visualization portfolio on GitHub Pages.
+    </div>
+  </footer>
 </body>
 </html>
