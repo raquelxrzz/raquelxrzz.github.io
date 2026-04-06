@@ -195,6 +195,35 @@
       font-size: 0.92rem;
     }
 
+    .triple-map-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .map-card {
+      background: #ffffff;
+      border: 1px solid #e7ebf2;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 6px 18px rgba(31, 36, 48, 0.08);
+    }
+
+    .map-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .map-card iframe {
+      width: 100%;
+      height: 520px;   /* 👈 increase size here */
+      border: none;
+      border-radius: 12px;
+    }
+
     @media (max-width: 720px) {
       .hero {
         padding: 72px 20px 46px;
@@ -328,15 +357,32 @@
         In this section, we compare the spatial distribution of <strong>larceny theft</strong>, <strong>fraud</strong>, and <strong>prostitution</strong> across San Francisco. 
       </p>
 
-      <div class="figure">
-        <iframe src="./plots/crime_spatial_layers.html"></iframe>
-        <div class="caption">
-          <strong>Figure 2.</strong> Heatmaps showing where larceny theft, fraud, and prostitution tend to appear across San Francisco over the full period covered by the dataset.
+      <div class="triple-map-grid">
+
+        <div class="map-card">
+          <h3>Larceny Theft</h3>
+          <iframe src="./plots/larceny_spatial_heatmap.html"></iframe>
         </div>
+
+        <div class="map-card">
+          <h3>Prostitution</h3>
+          <iframe src="./plots/prostitution_spatial_heatmap.html"></iframe>
+        </div>
+
+        <div class="map-card">
+          <h3>Fraud</h3>
+          <iframe src="./plots/fraud_spatial_heatmap.html"></iframe>
+        </div>
+
       </div>
+      <p>
+      <div class="caption">
+        <strong>Figure 2.</strong> Separate heatmaps showing where larceny theft, prostitution, and fraud tend to appear across San Francisco over the full period covered by the dataset.
+      </div>
+      </p>
 
       <p>
-        The differences between crime types are also clear in space. <strong>Prostitution</strong> is very concentrated, with most incidents happening in just a few areas. This makes it quite different from <strong>larceny theft</strong>, which appears across many parts of the city and follows a much more spread-out pattern.
+        The differences between crime types are also clear in space. <strong>Prostitution</strong> is very concentrated, with most incidents happening in just a few specific areas. This makes it quite different from <strong>larceny theft</strong>, which appears across many parts of the city and follows a much more spread-out pattern.
       </p>
 
       <p>
@@ -344,7 +390,7 @@
       </p>
 
       <p>
-        It is also important to remember that volume is not the focus here. <strong>Larceny theft</strong> appears much more often than the other crimes, but that does not mean it is more concentrated. By focusing on patterns instead of counts, we can better compare how each crime type is distributed across the city.
+        It is also important to remember that volume is not the focus here. <strong>Larceny theft</strong> appears much more often than the other crimes, but that does not mean it is more concentrated. By looking at each map separately, we can focus on the shape of the distribution rather than the number of incidents.
       </p>
 
       <p>
@@ -405,27 +451,27 @@
       <h2>Conclusion: One city, different patterns</h2>
 
       <p>
-        This analysis set out to understand how crime unfolds across both <strong>time</strong> and <strong>space</strong> in San Francisco.
+        This analysis started with a simple question: how does crime actually unfold across time and space in San Francisco?
       </p>
 
       <p>
-        Looking at these dimensions step by step, a clear idea emerges. Time shows that different crimes follow different daily rhythms. Space shows that they appear in different parts of the city. But it is only when we consider both together that the full picture becomes visible.
+        Looking at time shows that different crimes follow different daily rhythms. Looking at space shows that they appear in different parts of the city. But it is only when we look at both together that these differences really become clear.
       </p>
 
       <p>
-        Each crime type follows its own pattern. <strong>Larceny theft</strong> is spread across the city and increases with overall activity. <strong>Prostitution</strong> is much more concentrated, both in time and location. <strong>Fraud</strong>, on the other hand, reminds us that not all patterns reflect real behavior, but can also be influenced by how the data is recorded.
+        Each crime type behaves in its own way. <strong>Larceny theft</strong> is spread across the city and increases with overall activity. <strong>Prostitution</strong> is much more concentrated, both in time and location. <strong>Fraud</strong>, on the other hand, behaves differently again, reminding us that the data does not always reflect real-world behaviour directly.
       </p>
 
       <p>
-        This shows that crime is not random. It is shaped by how people move through the city, how different areas are used, and sometimes by the way incidents are reported.
+        What this shows is that crime is not random. It is connected to how people move through the city, how different areas are used, and sometimes to how incidents are recorded.
       </p>
 
       <p>
-        The main takeaway is simple: a city does not follow a single rhythm. Different activities happen at different times and in different places, and crime reflects that complexity.
+        In the end, the main idea is quite simple. A city does not follow a single rhythm. Different things happen at different times and in different places, and crime reflects that complexity.
       </p>
 
       <p>
-        To understand it properly, we need to look at both <strong>when</strong> and <strong>where</strong>, while also being aware of the limits of the data.
+        To understand these patterns properly, it is important to look at both <strong>when</strong> and <strong>where</strong>, while also being aware of what the data can and cannot tell us.
       </p>
     </section>
 
